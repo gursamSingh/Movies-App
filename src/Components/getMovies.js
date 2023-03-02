@@ -1,7 +1,8 @@
-const movies = [
+export const movies = [
     {
       _id: "5b21ca3eeb7f6fbccd471815",
       title: "Terminator",
+      overview: "Disguised as a human, a cyborg assassin known as a Terminator (Arnold Schwarzenegger) travels from 2029 to 1984 to kill Sarah Connor (Linda Hamilton). Sent to protect Sarah is Kyle Reese (Michael Biehn), who divulges the coming of Skynet, an artificial intelligence system that will spark a nuclear holocaust. Sarah is targeted because Skynet knows that her unborn son will lead the fight against them. With the virtually unstoppable Terminator in hot pursuit, she and Kyle attempt to escape.",
       genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
       numberInStock: 6,
       dailyRentalRate: 2.5

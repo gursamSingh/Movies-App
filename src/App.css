@@ -36,3 +36,56 @@
     transform: rotate(360deg);
   }
 }
+.banner-card{
+  width: 100vw;
+  height: 50vh;
+  position: relative;
+}
+
+.banner-img{
+  width: 100vw;
+  height: 50vh;
+}
+
+.banner-img:hover{
+  opacity: 30%;
+}
+
+.banner-title{
+  position: absolute;
+  top: 25vh;
+  left: 2rem;
+  color: white;
+}
+
+.banner-text{
+  position: absolute;
+  color: white;
+  top: 35vh;
+  left: 2rem;
+}
+
+@media screen and (max-width:400px){
+
+  .banner-card{
+    height: 30vh;
+    width: 100vw;
+  }
+
+  .banner-img{
+    height: 30vh;
+  }
+
+  .banner-title{
+    top:15vh;
+    font-size: 2rem;
+  }
+
+  .banner-text{
+    top:20vh;
+    font-size:1rem
+  }
+
+
+  
+}

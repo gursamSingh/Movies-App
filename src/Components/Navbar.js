@@ -4,8 +4,8 @@ export default class Navbar extends Component {
   render() {
     return (
         <div style={{display:'flex',backgroundColor:'whitesmoke',padding:'1rem',alignItems:'center'}}>
-            <h1>Movies App</h1>
-            <h1 style={{margin:'1rem'}}>Favourites</h1>
+            <h3>Movies App</h3>
+            <h3 style={{marginLeft:'0.5rem'}}>Favourites</h3>
         </div>
     )
   }

@@ -1,3 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 .App {
   text-align: center;
 }
@@ -53,39 +60,115 @@
 
 .banner-title{
   position: absolute;
-  top: 25vh;
+  top: 20vh;
   left: 2rem;
-  color: white;
+  color: black;
 }
 
 .banner-text{
   position: absolute;
-  color: white;
-  top: 35vh;
+  color: black;
+  top: 25vh;
   left: 2rem;
+  font-size: 2rem;
 }
 
-@media screen and (max-width:400px){
+
+.movies-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.movies-card{
+  height: 20vh;
+  width: 20vw;
+  margin: 1rem;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.movie-img{
+  height: 20vh;
+  width: 20vw;
+  border-radius: 1rem;
+}
+
+.movie-title{
+  color:white;
+  position: absolute;
+  padding: 1rem;
+}
+
+.btn-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-btn{
+  position: absolute;
+  bottom: 2rem;
+}
+
+
+/* WE ALWAYS PUT MEDIA QUERY IN THE LAST OF THE CSS */
+@media screen and (max-width:425px){
 
   .banner-card{
-    height: 30vh;
+    height: 40vh;
     width: 100vw;
   }
 
   .banner-img{
     height: 30vh;
+    width: 100vw;
   }
 
+  .banner-content{
+    height: 10vh;
+    width: 100vw;
+    position: relative;
+  }
   .banner-title{
-    top:15vh;
-    font-size: 2rem;
+    top: 0.5rem;
+    left: 1rem;
+    font-size: 1rem;
   }
 
   .banner-text{
-    top:20vh;
-    font-size:1rem
+    top: 2rem;
+    left: 1rem;
+    font-size: 0.6rem;
+  }
+
+  .movies-card{
+    width: 40vw;
+    height: 20vh;
+    margin: 1rem;
+    border-radius: 1rem;
+    position: relative;
+  }
+
+  .movie-img{
+    height: 20vh;
+    width: 40vw;
+    border-radius: 1rem;  
+  }
+
+  .movie-title{
+    color:white;
+    position: absolute;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .movie-btn{
+    position: absolute;
+    bottom: 1rem;
   }
 
 
-  
+
+
 }

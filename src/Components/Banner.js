@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 export default class Banner extends Component {
   render() {
     // console.log(movies)
-    let movie = movies[0]
+    let movie = movies.results[0]
     // let movie = ""
     return (
         <>
@@ -19,11 +19,12 @@ export default class Banner extends Component {
             </div>:         
 
             <div className="card banner-card">
-                {/* <img className="card-img-top" src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt={movie.title}/> */}
+                <img className="card-img-top banner-img" src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt={movie.title}/>
 
-                <img className="card-img-top banner-img" src={`https://i0.wp.com/www.theterminatorfans.com/wp-content/uploads/2021/11/How-Many-Terminator-Movies-Are-There.jpg?resize=1920%2C1080&ssl=1`} alt={movie.title}/>
-                <h1 className="card-title banner-title">{movie.title}</h1>
-                <p className="card-text banner-text">{movie.overview}</p>
+                <div className="banner-content">
+                  <h1 className="card-title banner-title">{movie.title}</h1>
+                  <p className="card-text banner-text">{movie.overview}</p>
+                </div>
                 {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
             </div>
         }

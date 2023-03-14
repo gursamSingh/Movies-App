@@ -111,7 +111,44 @@
   bottom: 2rem;
 }
 
+.favourites-genres{
+  position: relative;
+  top:1rem;
 
+}
+
+.favourites-table{
+  position: relative;
+  top:1rem;
+}
+
+.table-movie-img{
+  border-radius: 1rem;
+}
+
+.table-movie-title{
+  display: flex;
+  align-items: center;
+}
+
+.table-movie-title > span{
+  margin-left: 1rem;
+}
+
+.input-search{
+  height: 3rem;
+}
+
+.table td{
+  vertical-align: middle;
+}
+
+
+.fav-pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* WE ALWAYS PUT MEDIA QUERY IN THE LAST OF THE CSS */
 @media screen and (max-width:425px){
 

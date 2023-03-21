@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+
 
 export default class Movies extends Component {
     constructor(){
@@ -8,7 +10,8 @@ export default class Movies extends Component {
             hover:'',
             parr:[1],
             currPage:1,
-            movies:[]
+            movies:[],
+            favourites:[]
         }
     }
 
@@ -58,6 +61,38 @@ export default class Movies extends Component {
         }
     }
 
+    handleFavourites = (movie) =>{
+        let oldData = JSON.parse(localStorage.getItem("movies-app") || "[]");
+
+        if(this.state.favourites.includes(movie.id)){
+            oldData = oldData.filter((m)=>m.id != movie.id)
+        }else{
+            oldData.push(movie)
+        }
+
+        localStorage.setItem("movies-app",JSON.stringify(oldData));
+        console.log(oldData);
+        this.handleFavouritesState();
+    }
+
+    handleFavouritesState = () =>{
+        let oldData = JSON.parse(localStorage.getItem("movies-app") || "[]");
+        let temp = oldData.map((movie)=>movie.id)
+
+        this.setState({
+            favourites:[...temp]
+        })
+
+
+    }
+
+
+    getMovieId =(e) =>{
+        let movieId = e.target.getAttribute("id");
+        localStorage.setItem("movie-id",JSON.stringify(movieId));
+        console.log(movieId);
+    }
+
   render() {
     // let movie = movies.results
     return (
@@ -75,14 +110,19 @@ export default class Movies extends Component {
                     {
                         this.state.movies.map((movieObj) =>(
                         <div className="card movies-card" onMouseEnter={()=>{this.setState({hover:movieObj.id})}} onMouseLeave={()=>this.setState({hover:''})}>
-                            <img className="card-img-top movie-img" src={`https://image.tmdb.org/t/p/original${movieObj.backdrop_path}`} alt={this.state.movies.title}/>
-                            <h3 className="card-title movie-title">{movieObj.title}</h3>
+                            <div>
+                                <img className="card-img-top movie-img" src={`https://image.tmdb.org/t/p/original${movieObj.backdrop_path}`} alt={this.state.movies.title} />
+                            </div>
+                                <Link to="/movie-details" style={{textDecoration:'none'}}>
+                                    <h3 className="card-title movie-title" id={movieObj.id} onClick={this.getMovieId}>{movieObj.title}</h3>
+                                </Link> 
+                            
                                 {/* <p className="card-text movie-text">{movieObj.overview}</p> */}
                                 <div className='btn-wrapper'>
 
                                     {
                                         this.state.hover == movieObj.id &&
-                                        <a className="btn btn-primary movie-btn">Add to Favourites</a>
+                                        <a className="btn btn-primary movie-btn" onClick={() => this.handleFavourites(movieObj)}>{this.state.favourites.includes(movieObj.id)?"Remove from Favourites":"Add to Favourites"}</a>
                                     }
                                 </div>
                         </div>
@@ -115,7 +155,6 @@ export default class Movies extends Component {
                     </nav>
                 </div>
             </div>
-
         }
 
         </>

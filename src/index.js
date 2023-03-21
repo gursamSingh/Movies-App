@@ -3,6 +3,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from './Components/Navbar';
+import Banner from './Components/Banner';
+import Movies from './Components/Movies';
+import Favourites from './Components/Favourites';
+
+
+// export default function Apps() {
+//     return (
+//       <BrowserRouter>
+//         <Routes>
+//             <Route path="/" element={[<Navbar/>,<Banner/>]}>
+//             <Route path="favourites" element={<Favourites/>} />
+//             </Route>
+//         </Routes>
+//       </BrowserRouter>
+//     );
+// }
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

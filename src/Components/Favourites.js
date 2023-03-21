@@ -6,7 +6,8 @@ export default class Favourites extends Component {
         super();
         this.state={
             genres:[],
-            currGenre:`All Genres`
+            currGenre:`All Genres`,
+            movies:[]
         }
     }
     render() {
